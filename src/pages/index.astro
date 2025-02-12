@@ -1,16 +1,41 @@
 ---
-
+import BaseLayout from "../layout/BaseLayout.astro";
+import PhoneSpacer from "../sections/PhoneSpacer.astro";
+import Services from "../sections/Services.astro";
+import RotateTextSpacer from "../sections/RotateTextSpacer.astro";
+import TowingDescription from "../sections/TowingDescription.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Hunor Autómentés" description="Hunor autómentés weboldala.">
+  <section class="relative w-full md:min-h-[600px] min-h-[300px] h-[calc(100vh-15rem)]">
+    <!-- Háttérkép -->
+    <img src="/horizontal.webp" alt="Background" class="w-full h-full object-cover" />
+
+    <!-- Fekete átlátszó réteg -->
+    <div class="absolute inset-0 bg-black/60 bg-opacity-50 flex py-5">
+      <div class="container mx-auto flex justify-center items-center">
+        <div
+          class="glassmorpishm p-5 rounded-lg text-center text-teal-50
+        shadow-[0px_10px_48px_-4px_rgba(128,234,255,0.5)] bg-[#121212] w-fit"
+        >
+          <h1 class="text-6xl text-center font-bold p-0">Dobos Transport</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <PhoneSpacer />
+  <TowingDescription />
+  <RotateTextSpacer />
+  <Services />
+</BaseLayout>
+
+<script></script>
+
+<style>
+  .glassmorpishm {
+    background-color: rgba(13, 25, 26, 0.1);
+    backdrop-filter: blur(4px) saturate(100%);
+    -webkit-backdrop-filter: blur(4px) saturate(100%);
+    border: 1px solid rgba(38, 234, 237, 0.2);
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import LinkButton from "../components/button/LinkButton.astro";
+import Card from "../components/card/Card.astro";
+import PlugZap from "../icons/PlugZap.astro";
+import Tire from "../icons/Tire.astro";
+import TowTruck from "../icons/TowTruck.astro";
+import Truck from "../icons/Truck.astro";
+---
+
+<section class="md:pt-[100px] pt-[70px] md:pb-[100px] pb-[70px]" id="services">
+    <div class="container max-w-7xl mx-auto space-y-10">
+      <h2 class="uppercase text-2xl md:text-3xl text-white text-center">
+        Szol<span class="underline-wavy">gáltatás</span>aink
+      </h2>
+      <div class="space-y-5 px-5 2xl:px-0">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
+          <Card>
+            <div slot="heading" class="flex items-end gap-5 justify-between">
+              <h3 class="text-xl md:text-2xl text-white">Autómentés</h3>
+              <TowTruck classes="size-10 stroke-teal-500 fill-teal-500" />
+            </div>
+            <p slot="body" class="leading-loose">
+              Autómentés megfizethető áron, rejtett költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia!
+              Tartozzon Ön is elégedett ügyfeleink közé!
+            </p>
+            <div slot="footer" class="flex justify-between w-full">
+              <LinkButton href="tel:+36302508322">Hívjon most!</LinkButton>
+              <LinkButton href="#">Részletek</LinkButton>
+            </div>
+          </Card>
+          <Card>
+            <div slot="heading" class="flex items-end gap-5 justify-between">
+              <h3 class="text-xl md:text-2xl text-white">Autószállítás</h3>
+              <TowTruck classes="size-10 stroke-teal-500 fill-teal-500" />
+            </div>
+            <p slot="body" class="leading-loose">
+              Autószállítás megfizethető áron, rejtett költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia!
+              Tartozzon Ön is elégedett ügyfeleink közé! Heló sziasztok 123 123
+            </p>
+            <div slot="footer" class="flex justify-between w-full">
+              <LinkButton href="tel:+36302508322">Hívjon most!</LinkButton>
+              <LinkButton href="#">Részletek</LinkButton>
+            </div>
+          </Card>
+          <Card>
+            <div slot="heading" class="flex items-end gap-5 justify-between">
+              <h3 class="text-xl md:text-2xl text-white">Szállítmányozás</h3>
+              <Truck className="size-10 stroke-teal-500" />
+            </div>
+            <p slot="body" class="leading-loose">
+              Autószállítás megfizethető áron, rejtett költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia!
+              Tartozzon Ön is elégedett ügyfeleink közé! Heló sziasztok 123 123
+            </p>
+            <div slot="footer" class="flex justify-between w-full">
+              <LinkButton href="tel:+36302508322">Hívjon most!</LinkButton>
+              <LinkButton href="#">Részletek</LinkButton>
+            </div>
+          </Card>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+          <Card>
+            <div slot="heading" class="flex items-end gap-5 justify-between">
+              <h3 class="text-xl md:text-2xl text-white">Bikázás</h3>
+              <PlugZap className="size-10 stroke-teal-500" />
+            </div>
+            <p slot="body" class="leading-loose">
+              Autószállítás megfizethető áron, rejtett költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia!
+              Tartozzon Ön is elégedett ügyfeleink közé! Heló sziasztok 123 123 Autószállítás megfizethető áron, rejtett
+              költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia! Tartozzon Ön is elégedett ügyfeleink
+              közé! Heló sziasztok 123 123
+            </p>
+            <div slot="footer" class="flex justify-between w-full">
+              <LinkButton href="tel:+36302508322">Hívjon most!</LinkButton>
+              <LinkButton href="#">Részletek</LinkButton>
+            </div>
+          </Card>
+          <Card>
+            <div slot="heading" class="flex items-end gap-5 justify-between">
+              <h3 class="text-xl md:text-2xl text-white">Kerékcsere</h3>
+              <Tire className="size-10 stroke-teal-500 fill-teal-500" />
+            </div>
+            <p slot="body" class="leading-loose">
+              Autószállítás megfizethető áron, rejtett költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia!
+              Tartozzon Ön is elégedett ügyfeleink közé! Heló sziasztok 123 123 Autószállítás megfizethető áron, rejtett
+              költségek nélkül! Számunkra ügyfeleink elégedettsége a garancia! Tartozzon Ön is elégedett ügyfeleink
+              közé! Heló sziasztok 123 123
+            </p>
+            <div slot="footer" class="flex justify-between w-full">
+              <LinkButton href="tel:+36302508322">Hívjon most!</LinkButton>
+              <LinkButton href="#">Részletek</LinkButton>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>

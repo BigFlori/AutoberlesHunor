@@ -1,0 +1,27 @@
+---
+const homepageUrl = "/";
+
+const navMap = [
+  { key: "home", href: '', text: "Kezdőlap" },
+  { key: "services", href: `#services`, text: "Szolgáltatások" },
+  { key: "about", href: `#`, text: "Rólunk" },
+  { key: "gallery", href: `#`, text: "Galéria" },
+  { key: "contact", href: `#`, text: "Kapcsolat" },
+];
+---
+
+{
+  navMap.map(({ href, text }) => (
+    <li>
+      <a
+        href={homepageUrl.concat(href)}
+        class="!text-gray-300 inline-block hover:!text-white after:bg-teal-500 relative after:content-[''] after:block after:w-0
+               after:h-0.5 after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300
+               hover:after:w-full sora-light"
+      >
+        {text}
+        <span class="ml-3 md:hidden inline-block">&rarr;</span>
+      </a>
+    </li>
+  ))
+}

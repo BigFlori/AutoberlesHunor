@@ -1,0 +1,112 @@
+---
+import NavLinkList from "./NavLinkList.astro";
+import Phone from "../../icons/Phone.astro";
+---
+
+<nav class="relative z-10">
+  <div class="container p-6 mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <span class="font-semibold text-lg">Dobos Transport</span>
+    </div>
+
+    <!-- Nav Links (Desktop és nagyobb képernyőkön, középre igazítva) -->
+    <ul class="hidden lg:flex space-x-6 mx-auto">
+      <NavLinkList />
+    </ul>
+
+    <!-- Mobile button -->
+    <div class="hidden lg:block">
+      <a
+        href="tel:+36302508322"
+        class="!text-gray-300 hover:!text-white flex items-center gap-3 py-2 px-4 sora group hover:bg-teal-500/10 rounded-full"
+      >
+        <div class="flex items-center justify-center p-2 border border-teal-300/10 bg-teal-400/10 rounded-full">
+          <Phone className="size-6 stroke-teal-500" />
+        </div>
+        <span>+36 30 250 8322</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu (Mobilon) -->
+    <div class="lg:hidden flex items-center">
+      <button id="menu-btn" class="focus:outline-none relative w-8 h-8 flex items-center justify-center cursor-pointer">
+        <!-- Hamburger svg -->
+        <svg
+          id="hamburger-icon"
+          class="transition-transform duration-300 ease-in-out"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+
+        <!-- Close svg -->
+        <svg
+          id="close-icon"
+          class="absolute transition-transform duration-300 ease-in-out transform scale-0 rotate-45"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="5" y1="19" x2="19" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Dropdown Menu (Mobil nézet, vízszintesen elrendezett linkek) -->
+  <div
+    id="mobile-menu"
+    class="absolute bg-white w-full z-10 invisible lg:hidden border-y-2 border-orange-500 flex flex-col p-6 max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-in-out"
+  >
+    <ul class="flex flex-col space-y-3 items-start">
+      <NavLinkList />
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      if (mobileMenu) {
+        // A Tailwind osztályokat váltjuk a lenyíló animációhoz
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("opacity-0");
+        mobileMenu.classList.toggle("max-h-screen");
+        mobileMenu.classList.toggle("opacity-100");
+        mobileMenu.classList.toggle("invisible");
+
+        // Hamburger és close ikonok váltása
+        if (mobileMenu.classList.contains("max-h-screen")) {
+          if (hamburgerIcon) {
+            hamburgerIcon.classList.add("scale-0", "-rotate-45");
+          }
+          if (closeIcon) {
+            closeIcon.classList.remove("scale-0", "rotate-45");
+          }
+        } else {
+          if (hamburgerIcon) {
+            hamburgerIcon.classList.remove("scale-0", "-rotate-45");
+          }
+          if (closeIcon) {
+            closeIcon.classList.add("scale-0", "rotate-45");
+          }
+        }
+      }
+    });
+  }
+</script>
